@@ -1,0 +1,43 @@
+/* CSS */
+
+* {
+margin:0x;
+padding:0px
+}
+
+body {}
+
+/* ---- Nav ---- */
+
+nav {}
+
+nav ul {
+list-style-type: none;
+}
+
+nav ul li {}
+
+nav ul li a {}
+
+nav ul li a:hover {}
+
+/* ---- /Nav ---- */
+
+/* ---- Struktur ---- */
+
+.wrapper {
+width: 95%;
+max-width: 960px;
+margin: 0 auto;
+border: solid 1px #ccc;
+padding: 10px;
+}
+
+.main-content {}
+
+
+
+
+footer {}
+
+/* ---- /Struktur ---- */
