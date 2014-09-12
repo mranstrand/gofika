@@ -23,8 +23,8 @@
         </nav>
         
         <canvas id="canvas" style="border: 1px solid black"></canvas>
-        <img src="img/bulle.jpg" id="bulle" width="40" height="40">
-        <img src="img/kaffe.jpg" id="kaffe" width="40" height="40">
+        <img src="img/bulle.jpg" id="bulle" width="40" height="40" onclick="fikaKlick(event)">
+        <img src="img/kaffe.jpg" id="kaffe" width="40" height="40" onclick="fikaKlick(event)">
         
         <script>
             var c = document.getElementById("canvas");
@@ -39,8 +39,9 @@
                     this.alpha;
                 }
             
+            // Målar ut fikaobjekt
             FikaObject.prototype.paint = function(){
-                ctx.
+                ctx.drawImage(this.img, this.x, this.y);
             
             }
         </script>
