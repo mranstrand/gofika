@@ -30,18 +30,16 @@ www.twobeards.com
             </ul>    
         </nav>
         
-        <canvas id="canvas" style="border: 1px solid black" onmousemove="mouseMove(event)" onclick="canvasClick(event)" width="1000" height="600"></canvas>
-        <img src="img/bulle.jpg" id="bulle" width="40" height="40" onclick="fikaKlick(event)" alt="Bulle">
-        <img src="img/kaffe.jpg" id="kaffe" width="40" height="40" onclick="fikaKlick(event)" alt="Kaffe">
-        <div id="lista"></div>
+        <canvas id="canvas" style="border: 1px solid black" onmousemove="mouseMove(event)" width="1000" height="600"></canvas>
+        <img src="img/bulle.jpg" id="bulle" width="40" height="40" onclick="fikaKlick(event)">
+        <img src="img/kaffe.jpg" id="kaffe" width="40" height="40" onclick="fikaKlick(event)">
         
         <script>
             var c = document.getElementById("canvas");
             var ctx = c.getContext("2d");
-            var valdFika, fikaLista = [];
+            var valdFika;
             
                 function FikaObject(img){
-                    this.name = img.alt;
                     this.img = img;
                     this.x;
                     this.y;
@@ -56,8 +54,6 @@ www.twobeards.com
             
             }
             
-            
-            
             function fikaKlick(event){
                 // Skapar ett fikaobjekt av den klickade sorten
                 var klickadBild = document.getElementById(event.target.id);
@@ -66,33 +62,12 @@ www.twobeards.com
             }
             
             function mouseMove(e){
-                
-                    var canvPos = getPosition(e.currentTarget);
-                    ctx.clearRect(0,0,c.width, c.height);
-                    valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
-                    valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
-                    valdFika.paint();
-
+                var canvPos = getPosition(e.currentTarget);
+                ctx.clearRect(0,0,c.width, c.height);
+                valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
+                valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
+                valdFika.paint();
             }
-            
-            function canvasKlick(e){
-            
-
-                    
-                    fikaLista.push(valdFika);
-
-                printList();
-                
-            }
-            
-            function printList(){
-                var listStr = "";
-                for(val of fikaLista){
-                    listStr += "<br>" + val.name;
-                }
-                document.getElementById("lista").innerHTML = listStr;
-            }
-            
             
             function getPosition(element) {
                 var xPosition = 0;
