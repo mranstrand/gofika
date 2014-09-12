@@ -39,17 +39,18 @@ www.twobeards.com
             var ctx = c.getContext("2d");
             var valdFika;
             
-            
                 function FikaObject(img){
                     this.img = img;
                     this.x;
                     this.y;
+                    this.w = img.width;
+                    this.h = img.height;
                     this.alpha;
                 }
             
             // Målar ut fikaobjekt
             FikaObject.prototype.paint = function(){
-                ctx.drawImage(this.img, this.x, this.y);
+                ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
             
             }
             
@@ -61,10 +62,24 @@ www.twobeards.com
             }
             
             function mouseMove(e){
-                valdFika.x = e.clientX;
-                valdFika.y = e.clientY;
+                var canvPos = getPosition(e.currentTarget);
+                ctx.clearRect(0,0,c.width, c.height);
+                valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
+                valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
                 valdFika.paint();
             }
+            
+            function getPosition(element) {
+                var xPosition = 0;
+                var yPosition = 0;
+
+                while (element) {
+                    xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+                    yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+                    element = element.offsetParent;
+                }
+                return { x: xPosition, y: yPosition };
+}
         </script>
     </body>
 </html>
