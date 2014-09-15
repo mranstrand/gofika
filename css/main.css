@@ -1,23 +1,33 @@
 /* CSS */
 
 * {
-margin:0x;
+margin:0px;
 padding:0px
 }
 
-body {}
+body {
+    background: #e5e5e5;
+}
 
 /* ---- Nav ---- */
 
-nav {}
+nav {
+    background: #27b0be;
+
+}
 
 nav ul {
 list-style-type: none;
 }
 
-nav ul li {}
+nav ul li {
+    display: inline;
+}
 
-nav ul li a {}
+nav ul li a {
+    color: white;
+    
+}
 
 nav ul li a:hover {}
 
