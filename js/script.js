@@ -5,8 +5,6 @@ var fikaLista = [];
 window.onload = function () {
     c = document.getElementById("canvas");
     ctx = c.getContext("2d");
-    fikaLista.push(new FikaObject(document.getElementById("kaffe"), 100, 100));
-
 };
 
 function FikaObject(img, x, y) {
@@ -39,20 +37,18 @@ function mouseMove(e) {
     valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
     valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
     valdFika.paint();
-    //for (val of fikaLista) {
-    //  val.paint();
-    //        };
 
 };
 
 function canvasClick(e) {
-    alert("click");
-    /*var canvPos = getPosition(e.currentTarget);
+
+    var canvPos = getPosition(e.currentTarget);
     var xClick = e.clientX - canvPos.x - valdFika.w / 2;
     var yClick = e.clientY - canvPos.y - valdFika.h / 2;
     var img = valdFika.img;
     fikaLista.push(new FikaObject(img, xClick, yClick));
-    alert("click"); */
+    fikaLista[0].paint();
+
 };
 
 function getPosition(element) {
