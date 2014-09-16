@@ -7,10 +7,10 @@ window.onload = function () {
     ctx = c.getContext("2d");
 };
 
-function FikaObject(img) {
+function FikaObject(img, x, y) {
     this.img = img;
-    this.x;
-    this.y;
+    this.x = x;
+    this.y = y;
     this.w = img.width;
     this.h = img.height;
     this.alpha;
@@ -26,7 +26,7 @@ FikaObject.prototype.paint = function () {
 function fikaKlick(event) {
     // Skapar ett fikaobjekt av den klickade sorten
     var klickadBild = document.getElementById(event.target.id);
-    valdFika = new FikaObject(klickadBild);
+    valdFika = new FikaObject(klickadBild, -100, -100);
 
 };
 
@@ -39,8 +39,13 @@ function mouseMove(e) {
     valdFika.paint();
 };
 
-function canvasClick() {
-
+function canvasClick(e) {
+    var canvPos = getPosition(e.currentTarget);
+    var xClick = e.clientX - canvPos.x - valdFika.w / 2;
+    var yClick = e.clientY - canvPos.y - valdFika.h / 2;
+    var img = valdFika.img;
+    fikaLista.push(new FikaObject(img, xClick, yClick));
+    alert("click");
 };
 
 function getPosition(element) {
