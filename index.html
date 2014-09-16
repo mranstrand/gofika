@@ -20,68 +20,77 @@ www.twobeards.com
 
 <link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/><![endif]-->
 
-    </head>
-    <body>
-        
-        <!---- Menu ------>
-        <nav class="menu">
-            <ul>
-                <li><a href="#">
-                        <img src="img/icons/drink.svg">
-                        <span class="nav-info">Dryck</span>
-                    </a>
-                </li>
-                <li><a href="#">
+</head>
+
+<body>
+
+    <!---- Menu ------>
+    <nav class="menu">
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="img/icons/drink.svg">
+                    <span class="nav-info">Dryck</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="img/icons/food.svg">
                     <span class="nav-info">Mat</span>
-                    </a>
-                </li>
-                <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="img/icons/cake.svg">
                     <span class="nav-info">Godsaker</span>
-                    </a>
-                </li>
-                <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="img/icons/gift.svg">
                     <span class="nav-info">dekorato</span>
-                    </a>
-                </li>
-            </ul>    
-        </nav>
-        <div class="sub-nav">
-            <ul>
-                <li><a href="#">
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="sub-nav">
+        <ul>
+            <li>
+                <a href="#">
                     <img src="img/icons/drink.svg">
                     <span class="nav-info">Kaffe</span>
-                    </a>
-                </li>
-                <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="img/icons/food.svg">
                     <span class="nav-info">Te</span>
-                    </a>
-                </li>
-                <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="img/icons/cake.svg">
                     <span class="nav-info">Choladmjölk</span>
-                    </a>
-                </li>
-                <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <a href="#">
                     <img src="img/clubsoda.svg">
                     <span class="nav-info">Sockerdricka</span>
-                    </a>
-                </li>
-            </ul>    
-        
-        
-        
-        </div>
-        
-        <canvas id="canvas" style="border: 1px solid black" onmousemove="mouseMove(event)" onclick="canvasClick(event)" width="1000" height="600"></canvas>
-        <img src="img/bulle.jpg" id="bulle" width="40" height="40" onclick="fikaKlick(event)" alt="Bulle">
-        <img src="img/kaffe.jpg" id="kaffe" width="40" height="40" onclick="fikaKlick(event)" alt="Kaffe">
-        <div id="lista"></div>
-        
-    </body>
+                </a>
+            </li>
+        </ul>
+
+
+
+    </div>
+
+    <canvas id="canvas" style="border: 1px solid black" onmousemove="mouseMove(event)" onmouseup="canvasClick(event)" width="1000" height="600"></canvas>
+    <img src="img/bulle.jpg" id="bulle" width="40" height="40" onclick="fikaKlick(event)" alt="Bulle">
+    <img src="img/kaffe.jpg" id="kaffe" width="40" height="40" onclick="fikaKlick(event)" alt="Kaffe">
+    <div id="lista"></div>
+
+</body>
 
 </html>
 
