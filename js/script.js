@@ -37,28 +37,30 @@ function mouseMove(e) {
     valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
     valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
     valdFika.paint();
-};
+    for (val
 
-function canvasClick(e) {
-    var canvPos = getPosition(e.currentTarget);
-    var xClick = e.clientX - canvPos.x - valdFika.w / 2;
-    var yClick = e.clientY - canvPos.y - valdFika.h / 2;
-    var img = valdFika.img;
-    fikaLista.push(new FikaObject(img, xClick, yClick));
-    alert("click");
-};
-
-function getPosition(element) {
-    var xPosition = 0;
-    var yPosition = 0;
-
-    while (element) {
-        xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
-        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
-        element = element.offsetParent;
-    }
-    return {
-        x: xPosition,
-        y: yPosition
     };
-}
+
+    function canvasClick(e) {
+        var canvPos = getPosition(e.currentTarget);
+        var xClick = e.clientX - canvPos.x - valdFika.w / 2;
+        var yClick = e.clientY - canvPos.y - valdFika.h / 2;
+        var img = valdFika.img;
+        fikaLista.push(new FikaObject(img, xClick, yClick));
+        alert("click");
+    };
+
+    function getPosition(element) {
+        var xPosition = 0;
+        var yPosition = 0;
+
+        while (element) {
+            xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+            yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+            element = element.offsetParent;
+        }
+        return {
+            x: xPosition,
+            y: yPosition
+        };
+    }
