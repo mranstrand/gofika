@@ -37,6 +37,13 @@ function mouseMove(e) {
     valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
     valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
     valdFika.paint();
+    //if(fikaLista.length > 0){
+        var val;
+        for(val of fikaLista){
+            //val.paint();   
+        }
+        
+    //}
 
 };
 
@@ -47,7 +54,7 @@ function canvasClick(e) {
     var yClick = e.clientY - canvPos.y - valdFika.h / 2;
     var img = valdFika.img;
     fikaLista.push(new FikaObject(img, xClick, yClick));
-    fikaLista[0].paint();
+    //fikaLista[0].paint();
 
 };
 
