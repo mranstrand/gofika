@@ -37,13 +37,13 @@ function mouseMove(e) {
     valdFika.x = e.clientX - canvPos.x - valdFika.w / 2;
     valdFika.y = e.clientY - canvPos.y - valdFika.h / 2;
     valdFika.paint();
-    //if(fikaLista.length > 0){
-        var val;
-        for(val of fikaLista){
-            //val.paint();   
+    if(fikaLista.length > 0){
+        var i;
+        for(i in fikaLista){
+            fikaLista[i].paint();   
         }
         
-    //}
+    }
 
 };
 
